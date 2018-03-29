@@ -32,7 +32,7 @@ class EventRegistrationForm extends React.Component {
       {name: this.state.eventName},
       event => {
         this.setState({
-          message: t('Created') + ': ' + event.name
+          message: t('Created') + ': ' + event.id
         })
       }
     );
