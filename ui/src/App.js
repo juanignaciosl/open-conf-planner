@@ -10,11 +10,9 @@ import './App.css';
 
 class App extends Component {
   render() {
-    const {t} = this.props;
     return (
       <Router>
         <div className="App">
-          <h1>{t('WhatsTheNameOfYourEvent?')}</h1>
           <EventRegistrationForm/>
         </div>
       </Router>

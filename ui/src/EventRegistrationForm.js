@@ -1,6 +1,7 @@
 import React from 'react';
 import {translate} from 'react-i18next';
 import Client from "./Client"
+import EventConfigurationForm from './EventConfigurationForm'
 
 class EventRegistrationForm extends React.Component {
   constructor(props) {
@@ -8,7 +9,8 @@ class EventRegistrationForm extends React.Component {
     this.state = {
       value: '',
       eventName: null,
-      message: null
+      message: null,
+      event: null
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -32,23 +34,31 @@ class EventRegistrationForm extends React.Component {
       {name: this.state.eventName},
       event => {
         this.setState({
-          message: t('Created') + ': ' + event.id
+          event: event
         })
       }
     );
   }
 
   render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          <input type="text" value={this.state.value} onChange={this.handleChange}/>
-        </label>
-        <input type="submit" value="Submit"/>
-        <div>{this.state.eventName}</div>
-        <div>{this.state.message}</div>
-      </form>
-    );
+    const {t} = this.props;
+    if (this.state.event != null) {
+      return <EventConfigurationForm event={this.state.event}/>
+    } else {
+      return (
+        <div>
+          <h1>{t('WhatsTheNameOfYourEvent?')}</h1>
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              <input type="text" value={this.state.value} onChange={this.handleChange}/>
+            </label>
+            <input type="submit" value="Submit"/>
+            <div>{this.state.eventName}</div>
+            <div>{this.state.message}</div>
+          </form>
+        </div>
+      );
+    }
   }
 }
 
