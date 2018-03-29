@@ -9,10 +9,6 @@ import EventRegistrationForm from './EventRegistrationForm';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const {t} = this.props;
     return (

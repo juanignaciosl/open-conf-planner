@@ -8,12 +8,16 @@ i18n
     resources: {
       en: {
         translations: {
-          "WhatsTheNameOfYourEvent?": "What's the name of your event?"
+          "WhatsTheNameOfYourEvent?": "What's the name of your event?",
+          "Loading...": "Loading...",
+          "Created": "Created"
         }
       },
       es: {
         translations: {
-          "WhatsTheNameOfYourEvent?": "¿Cómo se llama tu evento?"
+          "WhatsTheNameOfYourEvent?": "¿Cómo se llama tu evento?",
+          "Loading...": "Cargando...",
+          "Created": "Creado"
         }
       }
     },
