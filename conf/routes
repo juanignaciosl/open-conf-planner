@@ -8,6 +8,7 @@ GET     /                           controllers.FrontendController.index()
 # An example route (Prefix all API routes with apiPrefix defined in application.conf)
 GET     /api/summary                controllers.HomeController.appSummary
 
+GET     /api/events/:id             controllers.EventsController.get(id)
 POST    /api/events                 controllers.EventsController.create
 
 # Serve static assets under public directory

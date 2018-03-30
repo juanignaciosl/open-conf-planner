@@ -8,6 +8,15 @@ function getSummary(cb) {
     .then(cb);
 }
 
+function getEvent(id, cb) {
+  return fetch('/api/events/' + id, {
+    accept: "application/json"
+  })
+    .then(checkStatus)
+    .then(parseJSON)
+    .then(cb);
+}
+
 function postEvent(event, cb) {
   return fetch('/api/events', {
     method: 'POST',
@@ -37,5 +46,5 @@ function parseJSON(response) {
   return response.json();
 }
 
-const Client = {getSummary, postEvent};
+const Client = {getSummary, getEvent, postEvent};
 export default Client;

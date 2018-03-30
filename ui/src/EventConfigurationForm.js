@@ -1,6 +1,6 @@
 import React from 'react';
 import {translate} from 'react-i18next';
-// import Client from "./Client";
+import Client from "./Client";
 
 class EventConfigurationForm extends React.Component {
   constructor(props) {
@@ -12,11 +12,16 @@ class EventConfigurationForm extends React.Component {
 
   render() {
     const {t} = this.props;
-    if(this.state.event) {
+    if (this.state.event) {
       return (
         <h2>{this.state.event.name}</h2>
       )
     } else {
+      Client.getEvent(this.props.match.params.id,
+        event => {
+          this.setState({event: event});
+        }
+      );
       return (
         <span>{t('Loading...')}</span>
       )
