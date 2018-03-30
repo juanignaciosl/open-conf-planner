@@ -1,6 +1,6 @@
 import React from 'react';
 import {translate} from 'react-i18next';
-import Client from "./Client";
+// import Client from "./Client";
 
 class EventConfigurationForm extends React.Component {
   constructor(props) {

@@ -1,4 +1,5 @@
-name := """scala-play-react-seed"""
+name := """open-conf-planner"""
+herokuAppName in Compile := "open-conf-planner"
 
 version := "1.0-SNAPSHOT"
 
