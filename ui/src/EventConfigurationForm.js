@@ -6,14 +6,22 @@ class EventConfigurationForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      event: props.event
+      event: props.location.state ? props.location.state.event : null
     }
   }
 
   render() {
-    return (
-      <h2>{this.state.event.name}</h2>
-    )
+    const {t} = this.props;
+    if(this.state.event) {
+      return (
+        <h2>{this.state.event.name}</h2>
+      )
+    } else {
+      return (
+        <span>{t('Loading...')}</span>
+      )
+    }
+
   }
 }
 
