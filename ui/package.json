@@ -13,7 +13,7 @@
     "i18next": "^10.6.0",
     "i18next-browser-languagedetector": "^2.1.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.2.1",
     "react-i18next": "^7.5.1",
     "react-scripts": "1.0.17"
   },
